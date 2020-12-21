@@ -4,8 +4,13 @@ import PropTypes from 'prop-types';
 class TodoItem extends Component {
   getStyle = () => {
       return {
-          background:'#f4f4f4',
+          // background:'#f4f4f4',
+          // background:'#333',
+          background:'#333',
+          // color: 'rgb(206, 92, 92)',
+          color: '#eee',
           padding:'10px',
+          margin:'4px',
           borderBottom:'1px #ccc dotted',
           textDecoration:this.props.todo.completed ? 'line-through' : 'none'
       }
@@ -37,7 +42,7 @@ TodoItem.propTypes = {
 //styling for delete button
 const btnStyle = {
   background: '#ff0000',
-  color:'#fff',
+  color: 'rgb(206, 92, 92)',
   border:'none',
   paddding:'5px 10px',
   borderRadius:'50%',

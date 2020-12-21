@@ -3,9 +3,23 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
-import About from './components/pages/Aabout';
+import About from './components/pages/About';
+import Notes from './components/pages/Notes';
 import axios from 'axios';
-// import { v4 as uuidv4 } from 'uuid';
+import DarkTheme, { createTheme } from 'react-dark-theme';
+
+
+const lightTheme = {
+  background: 'white',
+  text: 'black',
+}
+ 
+const darkTheme = {
+  background: '#121212',
+  text: 'white',
+}
+
+const myTheme = createTheme(darkTheme, lightTheme)
 
 
 class App extends Component {
@@ -42,7 +56,8 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className='App'>
+      <div className='App' style={{ backgroundColor: myTheme.background, color: myTheme.text }}>
+      {/* <DarkTheme light={lightTheme} dark={darkTheme} /> */}
         <div className="container">
         <Header />
         <Route exact path='/' render={props => (
@@ -53,7 +68,8 @@ class App extends Component {
             delTodo={this.delTodo}/>
           </React.Fragment>
         )}/>
-        <Route path='/about' component={About}/>
+          <Route path='/notes' component={Notes}/>
+          <Route path='/about' component={About}/>
         </div>
       </div>
       </Router>

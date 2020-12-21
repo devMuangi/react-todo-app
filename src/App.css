@@ -4,11 +4,22 @@
 .btn {
     display: inline-block;
     border: none;
+    margin-left: 2px;
     background:#555;
     color: #fff;
     padding: 7px 20px;
     cursor: pointer;
 }
 .btn:hover {
-    background:red;
+    background:rgb(206, 92, 92);
+}
+.headerStyle:hover {
+    background:rgb(206, 92, 92);
+}
+.todoheader {
+    color: rgb(206, 92, 92);
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: larger;
+    letter-spacing: .5vw;
 }
